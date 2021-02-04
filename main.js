@@ -3,7 +3,8 @@ const ipc = electron.ipcMain
 const url = require('url');
 const path = require('path');
 
-const ntClient = require('wpilib-nt-client')
+const ntClient = require('wpilib-nt-client');
+const { ipcRenderer } = require('electron/renderer');
 const client = new ntClient.Client()
 
 const robotAddress = '10.38.83.2'
@@ -15,6 +16,7 @@ var videoStreamURL = 'http://limelight.local>:5800'
 var angle = 0;
 
 const dialog = electron.dialog
+robotCoordinates = client.getEntry('RobotCoordinates')
 
 ipc.on('open-error-dialog', function(event){
     //dialog.showErrorBox('error message','demo')
@@ -42,6 +44,7 @@ app.on('ready', function(){
             nodeIntegration: true
         }
         
+        
     });
 
     mainWindow.loadURL(`file://${__dirname}/mainWindow.html`)
@@ -50,7 +53,8 @@ app.on('ready', function(){
     const mainMenu = Menu.buildFromTemplate(mainMenuTemplate)
 
     Menu.setApplicationMenu(mainMenu)
-    mainWindow.webContents.openDevTools();
+    //mainWindow.webContents.openDevTools();
+    mainWindow.webContents.webContents.send('gyroValue',robotCoordinates)
     
 })
 
@@ -75,7 +79,9 @@ function outputNum(){
     console.log(3)
 }
 
-robotCoordinates = client.getEntry('RobotCoordinates')
+
+//ipcRenderer.send('gyroValue', robotCoordinates)
+//window.webContents.send('gyroValue',robotCoordinates)
 
 //const {BrowserWindow} = require('electron')
 

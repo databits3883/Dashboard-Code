@@ -8,7 +8,7 @@
 
 body{
     font-family: Arial, Helvetica, sans-serif ;
-    background:rgb(20, 22, 22);
+    background:rgb(38, 41, 39);
     color:green;
     display: flex;
     flex-direction: column;
@@ -49,7 +49,7 @@ header {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: rgb(14, 14, 14);
+    background-color:black;
     overflow-x: hidden;
     padding-top: 20px;
     
@@ -67,7 +67,7 @@ header {
     z-index: 1;
     top: 0;
     right:0;
-    background-color: rgb(14, 14, 14);
+    background-color: black;
     overflow-x: hidden;
     padding-top: 20px;
     
