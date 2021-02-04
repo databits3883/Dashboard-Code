@@ -179,3 +179,10 @@ header {
     width: 200px;
     height: 200px;
 }
+.visionBox{
+    position: absolute;
+    width: 640px;
+    height: 480px;
+    top: 20%;
+    left: 30%;
+}
