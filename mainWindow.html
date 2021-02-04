@@ -8,15 +8,14 @@
             var number = "0";
             document.getElementById("mainnum").innerHTML = number;
         }
+        
 
     </script>
     <link rel = "stylesheet" href="style.css">
-    <script>
-        const electron = require('electron');
-        const {ipcRenderer} = electron;
+    <script defer src = "gyroScript.js">
 
-        document.querySelector
     </script>
+    
 
 
     
@@ -24,7 +23,7 @@
 
 <body>
     <script>
-        require('./index.js')
+        
         const electron = require('electron');
         const {ipcRenderer} = electron;
     </script>
@@ -39,26 +38,30 @@
     <section class="counters">
         <div class="container">
             <div>
-                <img src="3883header.png" width = "50%"height = "10%">
+                <img src="images/3883header.png" width = "50%"height = "10%">
                 
                 
             </div>
         </div>
     </section>
     <div class = "visionBox">
-        <img src="VisionPlaceholder.png" alt = "limelight" width="640" height="480">
+        <img src="images/VisionPlaceholder.png" alt = "limelight" width="640" height="480">
     </div>
     <div class="gyroBox">
-        <div class="pointerContainer">
-            <img class= "rotate" src = "pointer.png" alt="uh" width="200" height="200">
+        <div class="hand pointer" data-pointer-hand>
+            
         </div>
+        <script>
+            const index = require('./index.js');
+
+        </script>
         
     
     </div>
     
 </body>
 <div class = "leftSideBar">
-    <img src="fieldlayout4.png" alt="yuh" width="288" height="512">
+    <img src="images/fieldlayout4.png" alt="yuh" width="288" height="512">
     
     
 </div>

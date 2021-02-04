@@ -37,15 +37,21 @@ app.on('ready', function(){
     mainWindow = new BrowserWindow({
         width: 1600,
         height: 900,
-        icon: __dirname + '/vglogo.png',
+        icon: __dirname + '/images/Icon.png',
+        webPreferences:{
+            nodeIntegration: true
+        }
         
     });
 
     mainWindow.loadURL(`file://${__dirname}/mainWindow.html`)
+    
 
     const mainMenu = Menu.buildFromTemplate(mainMenuTemplate)
 
     Menu.setApplicationMenu(mainMenu)
+    mainWindow.webContents.openDevTools();
+    
 })
 
 

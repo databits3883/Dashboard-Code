@@ -162,23 +162,33 @@ header {
     line-height: normal;
 }
 .gyroBox{
-    position: absolute;
+    position: relative;
 
     border: rgb(15, 17, 17);
     width: 200px;
     height: 200px;
-    left: 20%;
-    top:74%;
+    left: 30%;
+    top:90%;
     border-radius: 32px;
     background-color: rgb(15, 17, 17);
-    align-items: center;
+    
     
 }
-.pointerContainer{
-    align-items: center;
-    width: 200px;
-    height: 200px;
+.gyroBox .hand{
+    --rotation: 30;
+;
+    position:absolute;
+    top:50%;
+    left: 50%;
+    width: 5px;
+    height: 48%;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: chartreuse;
+    transform-origin: top;
+    transform: rotate(calc((var(--rotation) + 180) * 1deg));
 }
+
 .visionBox{
     position: absolute;
     width: 640px;
