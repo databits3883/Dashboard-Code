@@ -1,0 +1,15 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "frc gui demo",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "FRC 3883",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^11.2.1",
+    "wpilib-nt-client": "^1.7.2"
+  }
+}
