@@ -16,7 +16,19 @@ var videoStreamURL = 'http://limelight.local>:5800'
 var angle = 0;
 
 const dialog = electron.dialog
-robotCoordinates = client.getEntry('RobotCoordinates')
+var robotCoordinates = client.getEntry('RobotCoordinates');
+var gyroEntry = client.getEntry('RotationDegrees');
+var gyroDegrees;
+
+client.addListener(('RotationDegrees',val,Number,id),
+gyroDegrees = val
+
+
+)
+
+client.addListener((key, val, type, id) => {
+    console.log({ key, val, type, id });
+})
 
 ipc.on('open-error-dialog', function(event){
     //dialog.showErrorBox('error message','demo')
@@ -54,9 +66,13 @@ app.on('ready', function(){
 
     Menu.setApplicationMenu(mainMenu)
     //mainWindow.webContents.openDevTools();
-    mainWindow.webContents.webContents.send('gyroValue',robotCoordinates)
+    
     
 })
+
+ipc.on('askGyroUpdate', function (event, arg) {
+    win.webContents.send('gyroVal', arg)
+  })
 
 
 
